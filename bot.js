@@ -69,6 +69,10 @@ client.on("message", async message => {
     const m = await message.channel.send("Ping?");
     m.edit(`Pong! Latency is ${m.createdTimestamp - message.createdTimestamp}ms. API Latency is ${Math.round(client.ping)}ms`);
   }
+  
+  if(command === "avatar") {
+    message.channel.send(${message.author.avatarURL});
+  }
 
   if(command === "help") {
     let embed = new Discord.RichEmbed()
@@ -83,7 +87,7 @@ client.on("message", async message => {
     
     return message.channel.send(embed);
   }
-  
+  //message.author.avatarURL
     if(command === "dm") {
       message.member.send('Hello World!')
   }
