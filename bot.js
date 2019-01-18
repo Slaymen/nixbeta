@@ -66,27 +66,13 @@ client.on("message", async message => {
   
   if(command === "help") {
     let embed = new Discord.RichEmbed()
+    .setAuthor(`Nix`, client.user.avatarURL)
     .setDescription("Here Are The Commands")
     .setColor("00FFFF")
     .addField("$help", "Gives a list of commands.")
     .addField("$kick", "Removes a person from the server.")
     .addField("$ban", "Removes a person from the server forever.")
     .addField("$purge", "Removes messages from the server.");
-    
-    return message.channel.send(embed);
-  }
-  
-   if(command === "info") {
-    let embed = new Discord.RichEmbed()
-    .setAuthor(`Nix`, client.user.avatarURL()
-    .addField(`Uptime`, `${uptime}`, true()
-    .addField(`Servers`, `${client.guilds.size}`, true()
-    .addField(`Users`, `${client.users.size}`, true()
-    .addField(`Website`, `[http://www.nixbot.tk](http://www.nixbot.tk)`, true()
-    .addField(`Developer`, `SlayzNetwork#9316`, true()
-    .setFooter("Prefix: $ | This bot is still under construction", "https://a.ppy.sh/5414370_1530431526.jpeg")
-    .setTimestamp()
-    .setColor(0xFF0092);
     
     return message.channel.send(embed);
   }
