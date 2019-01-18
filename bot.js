@@ -28,7 +28,7 @@ client.on("guildCreate", guild => {
 client.on("guildDelete", guild => {
   // this event triggers when the bot is removed from a guild.
   console.log(`I have been removed from: ${guild.name} (id: ${guild.id})`);
-  client.user.setActivity(`Prefix| . We are on ${client.guilds.size} servers`);
+  client.user.setActivity(`Prefix| $ We are on ${client.guilds.size} servers`);
 });
 
 
@@ -53,7 +53,7 @@ client.on("message", async message => {
   // Let's go with a few common example commands! Feel free to delete or change those.
   
   
-    if(command === "say") {
+    if(command === "uihvfhghierhiegihoeroweniwihq95j349y3t983x") {
     // makes the bot say something and delete the message. As an example, it's open to anyone to use. 
     // To get the "message" itself we join the `args` back into a string with spaces: 
     const sayMessage = args.join(" ");
@@ -68,10 +68,10 @@ client.on("message", async message => {
     let embed = new Discord.RichEmbed()
     .setDescription("Here Are The Commands")
     .setColor("00FFFF")
-    .addField(".help", "Gives a list of commands.")
-    .addField(".kick", "Removes a person from the server.")
-    .addField(".ban", "Removes a person from the server forever.")
-    .addField(".purge", "Removes messages from the server.");
+    .addField("$help", "Gives a list of commands.")
+    .addField("$kick", "Removes a person from the server.")
+    .addField("$ban", "Removes a person from the server forever.")
+    .addField("$purge", "Removes messages from the server.");
     
     return message.channel.send(embed);
   }
@@ -88,9 +88,9 @@ client.on("message", async message => {
     // We can also support getting the member by ID, which would be args[0]
     let member = message.mentions.members.first() || message.guild.members.get(args[0]);
     if(!member)
-      return message.reply("Please mention a valid member of this server");
+      return message.channel.send("Please mention a valid member of this server");
     if(!member.kickable) 
-      return message.reply("I cannot kick this user! Do they have a higher role? Do I have kick permissions?");
+      return message.channel.send("I cannot kick this user! Do they have a higher role? Do I have kick permissions?");
     
     // slice(1) removes the first part, which here should be the user mention or ID
     // join(' ') takes all the various parts to make it a single string.
@@ -108,13 +108,13 @@ client.on("message", async message => {
     // Most of this command is identical to kick, except that here we'll only let admins do it.
     // In the real world mods could ban too, but this is just an example, right? ;)
     if(!message.member.roles.some(r=>["Administrator"].includes(r.name)) )
-      return message.reply("Sorry, you don't have permissions to use this!");
+      return message.channel.send("Sorry, you don't have permissions to use this!");
     
     let member = message.mentions.members.first();
     if(!member)
-      return message.reply("Please mention a valid member of this server");
+      return message.channel.send("Please mention a valid member of this server");
     if(!member.bannable) 
-      return message.reply("I cannot ban this user! Do they have a higher role? Do I have ban permissions?");
+      return message.channel.send("I cannot ban this user! Do they have a higher role? Do I have ban permissions?");
 
     let reason = args.slice(1).join(' ');
     if(!reason) reason = "No reason provided";
@@ -132,7 +132,7 @@ client.on("message", async message => {
     
     // Ooooh nice, combined conditions. <3
     if(!deleteCount || deleteCount < 2 || deleteCount > 100)
-      return message.reply("Please provide a number between 2 and 100 for the number of messages to delete");
+      return message.channel.send("Please provide a number between 2 and 100 for the number of messages to delete");
     
     // So we get our messages, and delete them. Simple enough, right?
     const fetched = await message.channel.fetchMessages({limit: deleteCount});
