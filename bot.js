@@ -84,6 +84,10 @@ client.on("message", async message => {
     return message.channel.send(embed);
   }
   
+    if(command === "dm") {
+      message.member.send('Hello World!')
+  }
+  
   if(command === "kick") {
     // This command must be limited to mods and admins. In this example we just hardcode the role names.
     // Please read on Array.some() to understand this bit: 
