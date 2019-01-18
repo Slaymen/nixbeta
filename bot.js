@@ -63,10 +63,8 @@ client.on("message", async message => {
     message.channel.send(sayMessage);
   }
 
-  
   if(command === "help") {
     let embed = new Discord.RichEmbed()
-    .setAuthor(`Nix`, client.user.avatarURL)
     .setDescription("Here Are The Commands")
     .setColor("00FFFF")
     .addField("$help", "Gives a list of commands.")
