@@ -68,10 +68,10 @@ client.on("message", async message => {
     let embed = new Discord.RichEmbed()
     .setDescription("Here Are The Commands")
     .setColor("00FFFF")
-    .addField(".help")
-    .addField(".kick")
-    .addField(".ban")
-    .addField(".purge");
+    .addField(".help", "Gives a list of commands.")
+    .addField(".kick", "Removes a person from the server.")
+    .addField(".ban", "Removes a person from the server forever.")
+    .addField(".purge", "Removes messages from the server.");
     
     return message.channel.send(embed);
   }
