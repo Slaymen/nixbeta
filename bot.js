@@ -76,6 +76,20 @@ client.on("message", async message => {
     return message.channel.send(embed);
   }
   
+  if(command === "botinfo") {
+    let infoembed = new Discord.RichEmbed()
+    let icon = message.guild.displayAvatarURL;
+    .setDescription("Server Information")
+    .setColor("00FFFF")
+    .setThumbnail(icon)
+    .addField("Server Name", message.guild.name)
+    .addField("Created On", message.guild.createdAt)
+    .addField("You Joined On", message.guild.joinedAt)
+    .addField("Total Members", message.guild.memberCount)
+    
+    return message.channel.send(infoembed);
+  }
+  
   if(command === "kick") {
     // This command must be limited to mods and admins. In this example we just hardcode the role names.
     // Please read on Array.some() to understand this bit: 
