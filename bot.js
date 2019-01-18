@@ -77,12 +77,16 @@ client.on("message", async message => {
   if(command === "help") {
     let embed = new Discord.RichEmbed()
     .setAuthor(`Nix`, client.user.avatarURL)
-    .setDescription("Here Are The Commands")
+    .setTitle("Here Are The Commands")
     .setColor("00FFFF")
     .addField("$help", "Gives a list of commands.")
     .addField("$kick", "Removes a person from the server.")
     .addField("$ban", "Removes a person from the server forever.")
     .addField("$ping", "Shows latency between the bot and the API.")
+    .addField("$dm", "Gives a small dm.")
+    .addField("$avatar", "Shows a picture of your avatar.")
+    .addField("$botinfo", "Shows information about the bot.")
+    .addField("$serverinfo", "Shows information about the server.")
     .setFooter("Prefix: $ | This bot is still under construction", "http://2.bp.blogspot.com/-zyKlWanN5dI/Vj1Cd2jlWSI/AAAAAAAADL8/7IrG3rb9j1I/s1600/Anonymous-hacker-profile-picture.jpg");
     
     return message.channel.send(embed);
@@ -120,15 +124,28 @@ client.on("message", async message => {
 
   }
   
-    if(command === "info") {
+    if(command === "botinfo") {
     let embed = new Discord.RichEmbed()
     .setAuthor(`Nix`, client.user.avatarURL)
-    .setDescription("BOT INFO")
+    .setTitle("BOT INFO")
     .setColor("00FFFF")
     .addField("Bot Name:", "Nix")
     .addField("Bot Author", "SlayzNetwork#9316")
     .addField(`Servers`, `${client.guilds.size}`)
     .setFooter("If there are any issues contact the author.", "http://2.bp.blogspot.com/-zyKlWanN5dI/Vj1Cd2jlWSI/AAAAAAAADL8/7IrG3rb9j1I/s1600/Anonymous-hacker-profile-picture.jpg");
+    
+    return message.channel.send(embed);
+  }
+  
+      if(command === "serverinfo") {
+    let embed = new Discord.RichEmbed()
+    .setAuthor(`Nix`, client.user.avatarURL)
+    .setTitle("SERVER INFO")
+    .setColor("00FFFF")
+    .addField(`Server Name:`, `${client.guild}`)
+    .addField(`Server Owner:`, `${client.guild.owner}`)
+    .addField(`Region:`, `${client.guild.region}`)
+    .setThumbnail(`${client.guild.iconURL}`);
     
     return message.channel.send(embed);
   }
