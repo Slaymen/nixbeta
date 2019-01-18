@@ -62,6 +62,13 @@ client.on("message", async message => {
     // And we get the bot to say the thing: 
     message.channel.send(sayMessage);
   }
+  
+    if(command === "ping") {
+    // Calculates ping between sending a message and editing it, giving a nice round-trip latency.
+    // The second ping is an average latency between the bot and the websocket server (one-way, not round-trip)
+    const m = await message.channel.send("Ping?");
+    m.edit(`Pong! Latency is ${m.createdTimestamp - message.createdTimestamp}ms. API Latency is ${Math.round(client.ping)}ms`);
+  }
 
   if(command === "help") {
     let embed = new Discord.RichEmbed()
@@ -71,7 +78,7 @@ client.on("message", async message => {
     .addField("$help", "Gives a list of commands.")
     .addField("$kick", "Removes a person from the server.")
     .addField("$ban", "Removes a person from the server forever.")
-    .addField("$purge", "Removes messages from the server.")
+    .addField("$ping", "Shows latency between the bot and the API.")
     .setFooter("Prefix: $ | This bot is still under construction", "http://2.bp.blogspot.com/-zyKlWanN5dI/Vj1Cd2jlWSI/AAAAAAAADL8/7IrG3rb9j1I/s1600/Anonymous-hacker-profile-picture.jpg");
     
     return message.channel.send(embed);
@@ -103,6 +110,19 @@ client.on("message", async message => {
       .catch(error => message.reply(`Sorry ${message.author} I couldn't kick because of : ${error}`));
     message.reply(`${member.user.tag} has been kicked by ${message.author.tag} because: ${reason}`);
 
+  }
+  
+    if(command === "info") {
+    let embed = new Discord.RichEmbed()
+    .setAuthor(`Nix`, client.user.avatarURL)
+    .setDescription("Here Are The Commands")
+    .setColor("00FFFF")
+    .addField("Bot Name:", "Nix")
+    .addField("Bot Author", "SlayzNetwork#9316")
+    .addField("Servers", `${client.guilds.size}')
+    .setFooter("If there are any issues contact the author.", "http://2.bp.blogspot.com/-zyKlWanN5dI/Vj1Cd2jlWSI/AAAAAAAADL8/7IrG3rb9j1I/s1600/Anonymous-hacker-profile-picture.jpg");
+    
+    return message.channel.send(embed);
   }
   
   if(command === "ban") {
