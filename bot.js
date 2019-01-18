@@ -71,8 +71,8 @@ client.on("message", async message => {
     .addField("$help", "Gives a list of commands.")
     .addField("$kick", "Removes a person from the server.")
     .addField("$ban", "Removes a person from the server forever.")
-    .addField("$purge", "Removes messages from the server.");
-    .setFooter("Prefix: $ | This bot is still under construction", "http://2.bp.blogspot.com/-zyKlWanN5dI/Vj1Cd2jlWSI/AAAAAAAADL8/7IrG3rb9j1I/s1600/Anonymous-hacker-profile-picture.jpg")
+    .addField("$purge", "Removes messages from the server.")
+    .setFooter("Prefix: $ | This bot is still under construction", "http://2.bp.blogspot.com/-zyKlWanN5dI/Vj1Cd2jlWSI/AAAAAAAADL8/7IrG3rb9j1I/s1600/Anonymous-hacker-profile-picture.jpg");
     
     return message.channel.send(embed);
   }
