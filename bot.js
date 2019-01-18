@@ -71,7 +71,7 @@ client.on("message", async message => {
   }
   
   if(command === "avatar") {
-    message.channel.send(${message.author.avatarURL});
+    message.channel.send(`${message.author.avatarURL}`);
   }
 
   if(command === "help") {
