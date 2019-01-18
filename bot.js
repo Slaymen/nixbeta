@@ -76,6 +76,20 @@ client.on("message", async message => {
     return message.channel.send(embed);
   }
   
+   if(command === "info") {
+    let embed = new Discord.RichEmbed()
+    .setAuthor(`Nix`, client.user.avatarURL)
+    .addField(`Uptime`, `${uptime}`, true)
+    .addField(`Servers`, `${client.guilds.size}`, true)
+    .addField(`Users`, `${client.users.size}`, true)
+    .addField(`Website`, `[http://www.nixbot.tk](http://www.nixbot.tk)`, true)
+    .addField(`Developer`, `SlayzNetwork#9316`, true)
+    .setFooter("Prefix: $ | This bot is still under construction", "https://a.ppy.sh/5414370_1530431526.jpeg")
+    .setTimestamp()
+    .setColor(0xFF0092);
+    
+    return message.channel.send(embed);
+  }
   if(command === "kick") {
     // This command must be limited to mods and admins. In this example we just hardcode the role names.
     // Please read on Array.some() to understand this bit: 
@@ -122,22 +136,6 @@ client.on("message", async message => {
     await member.ban(reason)
       .catch(error => message.reply(`Sorry ${message.author} I couldn't ban because of : ${error}`));
     message.reply(`${member.user.tag} has been banned by ${message.author.tag} because: ${reason}`);
-  }
-  
-  if(command === "purge") {
-    // This command removes all messages from all users in the channel, up to 100.
-    
-    // get the delete count, as an actual number.
-    const deleteCount = parseInt(args[0], 10);
-    
-    // Ooooh nice, combined conditions. <3
-    if(!deleteCount || deleteCount < 2 || deleteCount > 100)
-      return message.channel.send("Please provide a number between 2 and 100 for the number of messages to delete");
-    
-    // So we get our messages, and delete them. Simple enough, right?
-    const fetched = await message.channel.fetchMessages({limit: deleteCount});
-    message.channel.bulkDelete(fetched)
-      .catch(error => message.reply(`Couldn't delete messages because of: ${error}`));
   }
 });
 
