@@ -119,7 +119,7 @@ client.on("message", async message => {
     .setColor("00FFFF")
     .addField("Bot Name:", "Nix")
     .addField("Bot Author", "SlayzNetwork#9316")
-    .addField("Servers", `${client.guilds.size}')
+    .addField("Servers", "${client.guilds.size}")
     .setFooter("If there are any issues contact the author.", "http://2.bp.blogspot.com/-zyKlWanN5dI/Vj1Cd2jlWSI/AAAAAAAADL8/7IrG3rb9j1I/s1600/Anonymous-hacker-profile-picture.jpg");
     
     return message.channel.send(embed);
