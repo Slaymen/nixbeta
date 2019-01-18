@@ -78,14 +78,11 @@ client.on("message", async message => {
   
   if(command === "botinfo") {
     let infoembed = new Discord.RichEmbed()
-    let icon = message.guild.displayAvatarURL;
-    .setDescription("Server Information")
+    .setDescription("Bot Information")
     .setColor("00FFFF")
-    .setThumbnail(icon)
-    .addField("Server Name", message.guild.name)
-    .addField("Created On", message.guild.createdAt)
-    .addField("You Joined On", message.guild.joinedAt)
-    .addField("Total Members", message.guild.memberCount)
+    .addField("Bot Name | NIX)
+    .addField("Bot Creator | SlayzNetwork#9316)
+    .addField("Version | BETA)
     
     return message.channel.send(infoembed);
   }
