@@ -140,7 +140,7 @@ client.on("message", async message => {
     if(command === "serverinfo") {
     let embed = new Discord.RichEmbed()
     .setAuthor(`Nix`, client.user.avatarURL)
-    .setTitle(`$(message.guild)`)
+    .setTitle(`${message.guild}`)
     .setColor("00FFFF")
     .addField("OWNER:",message.guild.owner, true)
     .addField("ROLES:",message.guild.roles.size, true)
