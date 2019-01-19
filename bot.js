@@ -85,8 +85,8 @@ client.on("message", async message => {
     .addField("$ping", "Shows latency between the bot and the API.")
     .addField("$dm", "Gives a small dm.")
     .addField("$avatar", "Shows a picture of your avatar.")
-    .addField("$botinfo", "Shows information about the bot.")
-    .addField("$serverinfo", "!UNDER CONSTRUCTION!")
+    .addField("$botinfo", "Displays information about the bot.")
+    .addField("$serverinfo", "Displays information about the server.")
     .setFooter("Prefix: $ | This bot is still under construction", "http://2.bp.blogspot.com/-zyKlWanN5dI/Vj1Cd2jlWSI/AAAAAAAADL8/7IrG3rb9j1I/s1600/Anonymous-hacker-profile-picture.jpg");
     
     return message.channel.send(embed);
