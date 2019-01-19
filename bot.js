@@ -139,14 +139,13 @@ client.on("message", async message => {
   
     if(command === "serverinfo") {
     let embed = new Discord.RichEmbed()
-    .setDescription("__________________________________________________________________________")
     .setAuthor(`Nix`, client.user.avatarURL)
-    .setTitle(`$(msg.guild)`)
+    .setTitle(`$(message.guild)`)
     .setColor("00FFFF")
     .addField("OWNER:",message.guild.owner, true)
     .addField("ROLES:",message.guild.roles.size, true)
     .addField("REGION:",message.guild.region, true)
-    .addField("MEMBERS:",message.guild.mememberCount, true);
+    .addField("MEMBERS:",message.guild.memberCount, true);
     
     return message.channel.send(embed);
   }
