@@ -80,8 +80,7 @@ client.on("message", async message => {
   }
 
   if(command === "addnix") {
-    message.channel.send("Add Nix: https://discordapp.com/oauth2/authorize?client_id=408804969332867092&scope=bot&permissions=8
-");
+    message.channel.send("Add Nix: https://discordapp.com/oauth2/authorize?client_id=408804969332867092&scope=bot&permissions=8");
   }
 
   if(command === "help") {
