@@ -70,11 +70,6 @@ client.on("message", async message => {
     m.edit(`Pong! Latency is ${m.createdTimestamp - message.createdTimestamp}ms. API Latency is ${Math.round(client.ping)}ms`);
   }
   
-  if(message.content.indexof(<@134812399994667009>){
-  message.delete()
-  return message.channel.send("do not ping slayz")
-  }
-  
   if(command === "avatar") {
     message.channel.send(`${message.author.avatarURL}`);
   }
