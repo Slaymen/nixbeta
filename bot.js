@@ -70,7 +70,6 @@ client.on("message", async message => {
     m.edit(`Pong! Latency is ${m.createdTimestamp - message.createdTimestamp}ms. API Latency is ${Math.round(client.ping)}ms`);
   }
   
-      if(command === "ping") {
   if(message.content.indexof(<@134812399994667009>){
   message.delete()
   return message.channel.send("do not ping slayz")
@@ -78,6 +77,11 @@ client.on("message", async message => {
   
   if(command === "avatar") {
     message.channel.send(`${message.author.avatarURL}`);
+  }
+
+  if(command === "addnix") {
+    message.channel.send("Add Nix: https://discordapp.com/oauth2/authorize?client_id=408804969332867092&scope=bot&permissions=8
+");
   }
 
   if(command === "help") {
@@ -91,6 +95,7 @@ client.on("message", async message => {
     .addField("$ping", "Shows latency between the bot and the API.")
     .addField("$dm", "Gives a small dm.")
     .addField("$avatar", "Shows a picture of your avatar.")
+    .addField("$addnix", "Gives a link to add nix.")
     .addField("$botinfo", "Displays information about the bot.")
     .addField("$serverinfo", "Displays information about the server.")
     .setFooter("Prefix: $ | This bot is still under construction", "http://2.bp.blogspot.com/-zyKlWanN5dI/Vj1Cd2jlWSI/AAAAAAAADL8/7IrG3rb9j1I/s1600/Anonymous-hacker-profile-picture.jpg");
