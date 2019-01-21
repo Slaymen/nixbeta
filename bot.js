@@ -76,13 +76,6 @@ client.on("message", async message => {
   if(command === "addnix") {
     message.channel.send("Add Nix: https://discordapp.com/oauth2/authorize?client_id=408804969332867092&scope=bot&permissions=8");
   }
-  
-    if(command === "kick") {
-  if(message.channel.guild.member(message.author).hasPermission("KICK_MEMBERS")){
-message.channel.send("has permission")
-} else{
-message.channel.send("nope")
-}
 
   if(command === "help") {
     let embed = new Discord.RichEmbed()
@@ -175,7 +168,7 @@ message.channel.send("nope")
   if(command === "ban") {
     // Most of this command is identical to kick, except that here we'll only let admins do it.
     // In the real world mods could ban too, but this is just an example, right? ;)
-    if(!message.member.roles.some(r=>["Administrator"].includes(r.name)) )
+    if(message.channel.guild.member(message.author).hasPermission("KICK_MEMBERS")) )
       return message.channel.send("Sorry, you don't have permissions to use this!");
     
     let member = message.mentions.members.first();
