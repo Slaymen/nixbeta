@@ -160,7 +160,7 @@ client.on("message", async message => {
     .setAuthor(`Nix`, client.user.avatarURL)
     .setTitle("!")
     .setColor("32CD32")
-    .addField('Success!','`${message.guild} Now Has Access To Vip!')
+    .addField(`Success!`,`${message.guild} Now Has Access To Vip!`);
 
     return message.channel.send(embed);
   }
