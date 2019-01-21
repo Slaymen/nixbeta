@@ -76,6 +76,13 @@ client.on("message", async message => {
   if(command === "addnix") {
     message.channel.send("Add Nix: https://discordapp.com/oauth2/authorize?client_id=408804969332867092&scope=bot&permissions=8");
   }
+  
+    if(command === "kick") {
+  if(message.channel.guild.member(message.author).hasPermission("KICK_MEMBERS")){
+message.channel.send("has permission")
+} else{
+message.channel.send("nope")
+}
 
   if(command === "help") {
     let embed = new Discord.RichEmbed()
