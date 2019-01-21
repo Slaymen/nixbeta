@@ -160,13 +160,14 @@ message.channel.send("nope")
     
     return message.channel.send(embed);
     }
-    if(command === "hey") {
-if(message.author.id == 1){
-message.channel.send("yes")
-} else{
-message.channel.send("no")
-}
   
+    if(command === "hey") {
+      if(message.author.id == 1){
+          message.channel.send("yes")
+      } else{
+          message.channel.send("no")
+      }
+  }
   
     if(command === "g3289fu09390ydf") {
     let embed = new Discord.RichEmbed()
