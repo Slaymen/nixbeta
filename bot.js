@@ -52,16 +52,6 @@ client.on("message", async message => {
   
   // Let's go with a few common example commands! Feel free to delete or change those.
   
-  client.on('message', () => {
-    if (message.content === "-sendguildmessages") {
-        var guildList = client.guilds.array();
-        try {
-            guildList.forEach(guild => guild.defaultChannel.send("messageToSend"));
-        } catch (err) {
-            console.log("Could not send message to " + guild.name);
-        }
-    }
-  
     if(command === "uihvfhghierhiegihoeroweniwihq95j349y3t983x") {
     // makes the bot say something and delete the message. As an example, it's open to anyone to use. 
     // To get the "message" itself we join the `args` back into a string with spaces: 
@@ -161,6 +151,16 @@ client.on("message", async message => {
     .addField("ROLES:",message.guild.roles.size, true)
     .addField("REGION:",message.guild.region, true)
     .addField("MEMBERS:",message.guild.memberCount, true);
+    
+    return message.channel.send(embed);
+  }
+  
+    if(command === "vip vn44ahf894hs9ha49h4q") {
+    let embed = new Discord.RichEmbed()
+    .setAuthor(`Nix`, client.user.avatarURL)
+    .setTitle("!")
+    .setColor("00FFFF")
+    .addField('Success!','`${message.guild} Now Has Access To Vip!')
     
     return message.channel.send(embed);
   }
