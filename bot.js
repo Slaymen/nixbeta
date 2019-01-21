@@ -102,13 +102,6 @@ client.on("message", async message => {
       message.member.send('Hello World!')
   }
   
-  if(command === "really") {  
-  if(message.author.id == 134812399994667009){
-message.channel.send("Yes")
-} else{
-message.channel.send("nope")
-}
-  
   if(command === "kick") {
     // This command must be limited to mods and admins. In this example we just hardcode the role names.
     // Please read on Array.some() to understand this bit: 
