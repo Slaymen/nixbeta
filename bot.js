@@ -111,7 +111,7 @@ message.channel.send("nope")
     // This command must be limited to mods and admins. In this example we just hardcode the role names.
     // Please read on Array.some() to understand this bit: 
     // https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Array/some?
-  if(message.channel.guild.member(message.author).hasPermission("KICK_MEMBERS"))
+    if(!message.member.roles.some(r=>["Administrator", "Moderator"].includes(r.name)) )
       return message.channel.send("Sorry, you don't have permissions to use this!");
     
     // Let's first check if we have a member and if we can kick them!
@@ -159,7 +159,14 @@ message.channel.send("nope")
     .addField("MEMBERS:",message.guild.memberCount, true);
     
     return message.channel.send(embed);
-  }
+    }
+    if(command === "hey") {
+if(message.author.id == 1){
+message.channel.send("yes")
+} else{
+message.channel.send("no")
+}
+  
   
     if(command === "g3289fu09390ydf") {
     let embed = new Discord.RichEmbed()
