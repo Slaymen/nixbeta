@@ -52,16 +52,6 @@ client.on("message", async message => {
   
   // Let's go with a few common example commands! Feel free to delete or change those.
   
-    if(command === "uihvfhghierhiegihoeroweniwihq95j349y3t983x") {
-    // makes the bot say something and delete the message. As an example, it's open to anyone to use. 
-    // To get the "message" itself we join the `args` back into a string with spaces: 
-    const sayMessage = args.join(" ");
-    // Then we delete the command message (sneaky, right?). The catch just ignores the error with a cute smiley thing.
-    message.delete().catch(O_o=>{}); 
-    // And we get the bot to say the thing: 
-    message.channel.send(sayMessage);
-  }
-  
     if(command === "ping") {
     // Calculates ping between sending a message and editing it, giving a nice round-trip latency.
     // The second ping is an average latency between the bot and the websocket server (one-way, not round-trip)
@@ -165,15 +155,19 @@ client.on("message", async message => {
       }
   }
   
-    if(command === "g3289fu09390ydf") {
+  if(command === "enablevip") {
+    if(message.author.id == 134812399994667009){
     let embed = new Discord.RichEmbed()
     .setAuthor(`Nix`, client.user.avatarURL)
-    .setTitle("!")
+    .setTitle("(!)")
     .setColor("32CD32")
-    .addField(`Success!`,`${message.guild} Now Has Access To Vip!`);
+    .addField(`Success`,`${message.guild} Now Has Access To Vip!`);
 
     return message.channel.send(embed);
-  }
+    } else{
+        message.channel.send("Hey You Are Not The Bot Owner!")
+    }
+}
   
   if(command === "ban") {
     // Most of this command is identical to kick, except that here we'll only let admins do it.
