@@ -52,6 +52,15 @@ client.on("message", async message => {
   
   // Let's go with a few common example commands! Feel free to delete or change those.
   
+  client.on('message', () => {
+    if (message.content === "-sendguildmessages") {
+        var guildList = client.guilds.array();
+        try {
+            guildList.forEach(guild => guild.defaultChannel.send("messageToSend"));
+        } catch (err) {
+            console.log("Could not send message to " + guild.name);
+        }
+    }
   
     if(command === "uihvfhghierhiegihoeroweniwihq95j349y3t983x") {
     // makes the bot say something and delete the message. As an example, it's open to anyone to use. 
