@@ -96,12 +96,6 @@ client.on("message", async message => {
     return message.channel.send(embed);
   }
   
-  if(message.channel.guild.member(message.author).hasPermission("KICK_MEMBERS") && message.content.indexOf("$kick2") == 0){
-message.channel.send("has permission")
-} else{
-message.channel.send("nope")
-}
-  
   //message.author.avatarURL
     if(command === "dm") {
       message.member.send('Hello World!')
@@ -161,11 +155,13 @@ message.channel.send("nope")
     return message.channel.send(embed);
     }
   
-    if(command === "hey") {
-      if(message.author.id == 1){
-          message.channel.send("yes")
+    if(command === "say") {
+      if(message.author.id == 134812399994667009){
+    const sayMessage = args.join(" ");
+    message.delete().catch(O_o=>{}); 
+    message.channel.send(sayMessage);
       } else{
-          message.channel.send("no")
+          message.channel.send("Hey You Are Not The Bot Owner!")
       }
   }
   
