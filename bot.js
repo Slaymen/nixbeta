@@ -155,13 +155,13 @@ client.on("message", async message => {
     return message.channel.send(embed);
   }
   
-    if(command === "VIP_vn44ahf894hs9ha49h4q") {
+    if(command === "g3289fu09390ydf") {
     let embed = new Discord.RichEmbed()
     .setAuthor(`Nix`, client.user.avatarURL)
     .setTitle("!")
     .setColor("32CD32")
     .addField('Success!','`${message.guild} Now Has Access To Vip!')
-    
+
     return message.channel.send(embed);
   }
   
