@@ -168,7 +168,7 @@ client.on("message", async message => {
   if(command === "ban") {
     // Most of this command is identical to kick, except that here we'll only let admins do it.
     // In the real world mods could ban too, but this is just an example, right? ;)
-    if(message.channel.guild.member(message.author).hasPermission("KICK_MEMBERS")) )
+    if(!message.member.roles.some(r=>["Administrator", "Moderator"].includes(r.name)) )
       return message.channel.send("Sorry, you don't have permissions to use this!");
     
     let member = message.mentions.members.first();
