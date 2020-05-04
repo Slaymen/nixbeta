@@ -28,7 +28,7 @@ client.on("guildCreate", guild => {
 client.on("guildDelete", guild => {
   // this event triggers when the bot is removed from a guild.
   console.log(`I have been removed from: ${guild.name} (id: ${guild.id})`);
-  client.user.setActivity(`Prefix $ | We are on ${client.guilds.size} servers | https://www.nixbot.tk`);
+  client.user.setActivity(`Prefix $ | Watching ${client.guilds.size} Servers`);
 });
 
 
@@ -55,16 +55,12 @@ client.on("message", async message => {
     if(command === "ping") {
     // Calculates ping between sending a message and editing it, giving a nice round-trip latency.
     // The second ping is an average latency between the bot and the websocket server (one-way, not round-trip)
-    const m = await message.channel.send("Ping?");
-    m.edit(`Pong! Latency is ${m.createdTimestamp - message.createdTimestamp}ms. API Latency is ${Math.round(client.ping)}ms`);
+    const m = await message.channel.send("Pinging..");
+    m.edit(`${m.createdTimestamp - message.createdTimestamp}ms`);
   }
   
   if(command === "avatar") {
     message.channel.send(`${message.author.avatarURL}`);
-  }
-
-  if(command === "addnix") {
-    message.channel.send("Add Nix: https://discordapp.com/oauth2/authorize?client_id=408804969332867092&scope=bot&permissions=8");
   }
 
   if(command === "help") {
@@ -78,10 +74,9 @@ client.on("message", async message => {
     .addField("$ping", "Shows latency between the bot and the API.")
     .addField("$dm", "Gives a small dm.")
     .addField("$avatar", "Shows a picture of your avatar.")
-    .addField("$addnix", "Gives a link to add nix.")
     .addField("$botinfo", "Displays information about the bot.")
     .addField("$serverinfo", "Displays information about the server.")
-    .setFooter("Prefix: $ | This bot is still under construction", "http://2.bp.blogspot.com/-zyKlWanN5dI/Vj1Cd2jlWSI/AAAAAAAADL8/7IrG3rb9j1I/s1600/Anonymous-hacker-profile-picture.jpg");
+    .setFooter("Prefix: $ | This bot is still under construction");
     
     return message.channel.send(embed);
   }
@@ -125,9 +120,9 @@ client.on("message", async message => {
     .setTitle("BOT INFO")
     .setColor("00FFFF")
     .addField("Bot Name:", "Nix")
-    .addField("Bot Author", "SlayzNetwork#9316")
+    .addField("Bot Author", "ScriptingGhostt#0001")
     .addField(`Servers`, `${client.guilds.size}`)
-    .setFooter("If there are any issues contact the author.", "http://2.bp.blogspot.com/-zyKlWanN5dI/Vj1Cd2jlWSI/AAAAAAAADL8/7IrG3rb9j1I/s1600/Anonymous-hacker-profile-picture.jpg");
+    .setFooter("If there are any issues contact the author.");
     
     return message.channel.send(embed);
   }
@@ -161,7 +156,7 @@ client.on("message", async message => {
     .setAuthor(`Nix`, client.user.avatarURL)
     .setTitle("(!)")
     .setColor("32CD32")
-    .addField(`Success`,`${message.guild} Now Has Access To Vip!`);
+    .addField(`Success`,`${message.guild} Now Has Access To Vip Commands Issued By (BOT ADMIN: ScriptingGhostt#0001)`);
 
     return message.channel.send(embed);
     } else{
