@@ -62,34 +62,7 @@ client.on("message", async message => {
   if(command === "avatar") {
     message.channel.send(`${message.author.avatarURL}`);
   }
-  
-  if (command === 'blackjack'){
-  var a = 11;
-  var card = [2, 3, 4, 5, 6, 7, 8, 9, 10, a];
-  var c1 = card[Math.floor(Math.random()*card.length)];
-  var c2 = card[Math.floor(Math.random()*card.length)];
-  var cardtotal = c1 + c2;
-  message.channel.send('Your cards are a ' + c1 + ' and a ' + c2 + ', with a total of ' + cardtotal + '. Do you want to hit (:thumbsup:) or stand (:thumbsdown:)?').then(sentMessage => {
-  sentMessage.react('👍');
-  sentMessage.react('👎');
-  });
-  const filter = (reaction, user) => {
-    return ['👍', '👎'].includes(reaction.emoji.name) && user.id === message.author.id;
-  };
 
-  message.awaitReactions(filter, { max: 1, time: 10000, errors: ['time'] })
-    .then(collected => {
-      const reaction = collected.first();
-
-      if (reaction.emoji.name === '👍') {
-        message.reply('You decided to hit');
-      } else if (reaction.emoji.name === '👎') {
-        message.reply('You decided to stand');
-      }
-    })
-    .catch(collected => {
-      message.reply('You didn\'t do anything, so now the game\'s over.');
-    });
   if(command === "help") {
     let embed = new Discord.RichEmbed()
     .setAuthor(`Nix`, client.user.avatarURL)
