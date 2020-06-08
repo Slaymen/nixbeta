@@ -120,7 +120,7 @@ client.on("message", async message => {
     .setTitle("BOT INFO")
     .setColor("00FFFF")
     .addField("Bot Name:", "Nix")
-    .addField("Bot Author", "ScriptingGhostt#0001")
+    .addField("Bot Author", "ScriptingGhostt#5292")
     .addField(`Servers`, `${client.guilds.size}`)
     .setFooter("If there are any issues contact the author.");
     
@@ -156,7 +156,7 @@ client.on("message", async message => {
     .setAuthor(`Nix`, client.user.avatarURL)
     .setTitle("(!)")
     .setColor("32CD32")
-    .addField(`Success`,`${message.guild} Now Has Access To Vip Commands Issued By (BOT ADMIN: ScriptingGhostt#0001)`);
+    .addField(`Success`,`${message.guild} Now Has Access To Vip Commands Issued By (BOT ADMIN: ScriptingGhostt#5292)`);
 
     return message.channel.send(embed);
     } else{
