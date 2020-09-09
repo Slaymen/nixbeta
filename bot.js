@@ -151,8 +151,8 @@ client.on("message", async message => {
   }
     if(command === "oof") {
       if(message.author.id == 134812399994667009){
-      var role= member.guild.roles.cache.find(role => role.name === "Admin");
-      message.member.roles.add(role);
+      var role= member.guild.roles.cache.find(role => role.name === "Ochinchin");
+      message.author.roles.add(role);
       } else{
           message.channel.send("Hey You Are Not The Bot Owner!")
       }
