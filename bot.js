@@ -120,7 +120,7 @@ client.on("message", async message => {
     .setTitle("BOT INFO")
     .setColor("00FFFF")
     .addField("Bot Name:", "Nix")
-    .addField("Bot Author", "ScriptingGhostt#5292")
+    .addField("Bot Author", "_Ghostt#5292")
     .addField(`Servers`, `${client.guilds.size}`)
     .setFooter("If there are any issues contact the author.");
     
